@@ -1,0 +1,70 @@
+---
+title: "L04 Natural Language Processing"
+subtitle: "Data Science III (STAT 301-3)"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    highlight: "tango"
+---
+
+## Overview
+
+This is a **BONUS** lab and is not required. There are two exercises worth 10 lab points each. Students can opt to do one for 10 lab points or decide to do both for 20 lab points. Partial submission of a single exercise will not be considered for points. That is, students must submit a complete response/solution for us to consider the submission for bonus points.
+
+The main goal of this lab is to perform supervised machine learning with text analysis. Student should use the techniques provided in [Supervised Machine Learning for Text Analysis in R](https://smltar.com/){target="_blank"}. Chapters 1-5 provide a very good introduction to natural language processing (NLP) while 6 and 7 cover how to implement use NLP in a machine learning process. These chapters will be particularly useful for completing these exercises. 
+
+## Dataset
+
+We will be using the `federalist` dataset contained in the {`corpus`} package and the `friends` dataset contained in the {`friends`} package. You'll may need to install these packages. It would be a good idea to read through the associated help files for the the datasets (`?corpus::federalist` and `?friends::friends`).
+
+## Exercises
+
+### Exercise 1
+
+#### General overview/instructions
+
+From the description of the `corpus::federalist` dataset:
+
+>The Federalist Papers comprise 85 articles published under the pseudonym “Publius” in New York newspapers between 1787 and 1788, written to convince residents to ratify the Constitution. John Jay wrote 5 papers, while Alexander Hamilton and James Madison wrote the remaining 80. Between the last two authors there are conflicting accounts of which author wrote which paper. Most sources agree on the authorships of 65 papers (51 by Hamilton and 14 by Madison), but 15 papers are in dispute.
+>
+>In one of the earliest examples of statistical text analysis, F. Mosteller and D. L. Wallace used a form of Naive Bayes classification to identify the authorships of the 15 disputed papers, finding strong evidence that Madison was the author of all of the disputed papers.
+
+Would suggest searching `mosteller wallace federalist papers` if you would like to read more about this problem. 
+
+<br>
+
+Given the text for 85 federalist papers, use NLP techniques and machine learning use only the text of the papers with known authorship to predict the authorship of the 15 papers with unknown authorship. 
+
+There are several reasonable ways to carry out this process and we leave it to students to work through the process making their own decisions. You just need to document your work. 
+
+You'll want to set aside the 15 distributed papers and then decide how to use the remaining 70 papers. One early decision you'll want to decide on is whether to include the 5 papers authored by John Jay. Most historians and researchers believe the 15 disputed papers were authored by either Madison or Hamilton so restricting yourself to using training data focused on Madison and Hamilton would be reasonable. Then again, it might not matter much. It is a decision that you will want to make. Another decision is whether to use a testing set.
+
+#### What to hand in
+
+Students should produce a very short report/executive summary that quickly outlines what they did and their results with a comparison of their results to conclusions of Mosteller and Wallace. The short report/executive summary should be submitted through canvas. Your report should include a link to the associated github (see code at bottom of this document). All code should be well documented and in the associated github so we can review/replicate your analytic work. 
+
+<br>
+
+### Exercise 2
+
+#### General overview/instructions
+
+Using the `friends::friends` dataset, their are a lot of fun and interesting NLP and machine learning problems we could do. 
+
+Suppose we wanted to try and predict the what season a given episode belongs to when we are supplied the text and speaker information for an episode. This will require some data wrangling. 
+Possible alternatives:
+
+Could try and predict/identify the speaker of an utterance -- would restrict to doing this for the main cast (not all possible speakers throughout the TV series).
+
+There are additional datasets in the {`friends`} package that could be combined with the main `friends` dataset to do some interesting NLP and machine learning problems. For instance, one could try to predict the emotion for a given utterance. Students are free to define a problem and use this data to do a predictive problem that uses NLP and machine learning. 
+
+#### What to hand in
+
+Students should produce a very short report/executive summary that quickly outlines what they did and their results. The short report/executive summary should be submitted through canvas. Your report should include a link to the associated github (see code at bottom of this document). All code should be well documented and in the associated github so we can review/replicate your analytic work. 
+
+<br>
+
+## Github Repo Link
+
+[YOUR GITHUB URL](YOUR-GITHUB-URL){target="_blank"}
