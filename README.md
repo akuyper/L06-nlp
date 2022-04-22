@@ -9,5 +9,5 @@ The main goal of this lab is to perform supervised machine learning with text an
 
 After creating a github repo and connecting it to RStudio, students should work through the instructions provided in `LO4_nlp.html`. Students will have to setup a reasonable organizational structure and necessary scripts to complete their work.
 
-Students will need to submit their kitted html file(s) which should contain a link to their github repo. 
+Students will need to submit their knitted html file(s) which should contain a link to their github repo. 
 
