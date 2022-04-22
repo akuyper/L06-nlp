@@ -1,0 +1,27 @@
+---
+title: "Friends Dialogue Bonus"
+subtitle: "YOU CHOICE"
+author: "YOUR NAME"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+    highlight: "tango"
+---
+
+<!-- Set global options for R code chunks -->
+```{r global-settings, include=FALSE}
+knitr::opts_chunk$set(
+  warning = FALSE, message = FALSE
+)
+```
+
+## What to hand in
+
+Students should produce a very short report/executive summary that quickly outlines what they did and their results. The short report/executive summary should be submitted through canvas. As always it should be well formatted and organized. Your report should include a link to the associated github (see code at bottom of this document). All code should be well documented and in the associated github so we can review/replicate your analytic work. 
+
+<br>
+
+## Github Repo Link
+
+[YOUR GITHUB URL](YOUR-GITHUB-URL){target="_blank"}
