@@ -1,0 +1,31 @@
+---
+title: "Federalist Papers Bonus"
+subtitle: "YOUR CHOICE"
+author: "YOUR NAME"
+
+format:
+  html:
+    toc: true
+    embed-resources: true
+    code-fold: show
+    link-external-newwindow: true
+    
+execute:
+  warning: false
+
+from: markdown+emoji 
+---
+
+::: {.callout-tip icon=false}
+
+## Github Repo Link
+
+To link to your github **repo**sitory, appropriately edit the example link below. Meaning replace `https://your-github-repo-url` with your github repo url. Suggest verifying the link works before submitting.
+
+[https://your-github-repo-url](https://your-github-repo-url)
+
+:::
+
+## What to hand in
+
+Students should produce a very short report/executive summary that quickly outlines what they did and their results with a comparison of their results to the conclusions of Mosteller and Wallace. The short report/executive summary should be submitted through canvas. **Your report should include a link to the associated GitHub repo.** As always, all code should be well documented and in the associated GitHub repo so we can review/replicate your analytic work. 
