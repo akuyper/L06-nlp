@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
 width: 0.8em;
 margin: 0 0.8em 0.2em -1em;  vertical-align: middle;
 }
+
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+}
+pre.numberSource { margin-left: 3em; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -3099,9 +3133,17 @@ Github Repo Link
 <p>This is a <strong>BONUS</strong> lab and is not required. There are two exercises worth 5 lab points each. Students can opt to do one for 5 lab points or decide to do both for 10 lab points. Partial submissions of a single exercise will not be considered for points. That is, students must submit a complete response/solution for us to consider the submission for bonus points.</p>
 <p>The main goal of this lab is to perform supervised machine learning with text analysis. Student should use the techniques provided in <a href="https://smltar.com/">Supervised Machine Learning for Text Analysis in R</a>. Chapters 1-5 provide a very good introduction to natural language processing (NLP) while 6 and 7 cover how to use NLP in a machine learning process. These chapters will be particularly useful for completing these exercises.</p>
 </section>
-<section id="dataset" class="level2">
+<section id="dataset" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="dataset">Dataset</h2>
-<p>We will be using the <code>federalist</code> dataset contained in the {<code>corpus</code>} package and the <code>friends</code> dataset contained in the {<code>friends</code>} package. You may need to install these packages. It would be a good idea to read through the associated help files for the the datasets (<code>?corpus::federalist</code> and <code>?friends::friends</code>).</p>
+<p>We will be using the <code>federalist</code> dataset contained in the <code>corpus</code> package and the <code>friends</code> dataset contained in the <code>friends</code> package. Unfortunately <code>corpus</code> was <a href="https://cran.r-project.org/web/packages/corpus/index.html">archived</a> on 2023-05-20. Meaning it was no longer available for installation through CRAN. This could be due to it no longer being actively maintained or not meeting specifications for updating to new versions of R. Accordingly, we have included the <code>federalist</code> dataset from <code>corpus</code> in the <code>data/</code> directory. Alternatively, you might want to try and install an archived version of <code>corpus</code><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>, which can be achieved with the following code:</p>
+<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup> Sometimes it is useful to install packages that are achieved. While they are not directly available for your version of R they have the tools you need and still may work on your version of R. Reasons for archiving can be very minor.</p></li></div><div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># url to archived package zip file (most recent version cran had)</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pgk_url <span class="ot">&lt;-</span> <span class="st">&quot;https://cran.r-project.org/src/contrib/Archive/corpus/corpus_0.10.2.tar.gz&quot;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># install</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(urL_package, <span class="at">repos =</span> <span class="cn">NULL</span>, <span class="at">type =</span> <span class="st">&quot;source&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Once you have installed these packages. It would be a good idea to read through the associated help files for the the datasets (<code>?corpus::federalist</code> and <code>?friends::friends</code>). Documentation for the <code>federalist</code> is also provided in <code>data/</code> directory.</p>
 </section>
 <section id="exercises" class="level2 page-columns page-full">
 <h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
@@ -3112,8 +3154,8 @@ Github Repo Link
 <p>From the description of the <code>corpus::federalist</code> dataset:</p>
 <blockquote class="blockquote page-columns page-full">
 <p>The Federalist Papers comprise 85 articles published under the pseudonym “Publius” in New York newspapers between 1787 and 1788, written to convince residents to ratify the Constitution. John Jay wrote 5 papers, while Alexander Hamilton and James Madison wrote the remaining 80. Between the last two authors there are conflicting accounts of which author wrote which paper. Most sources agree on the authorships of 65 papers (51 by Hamilton and 14 by Madison), but 15 papers are in dispute.</p>
-<p>In one of the earliest examples of statistical text analysis, F. Mosteller and D. L. Wallace used a form of Naive Bayes classification to identify the authorships of the 15 disputed papers, finding strong evidence that Madison was the author of all of the disputed papers.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<div class="no-row-height column-margin column-container"><li id="fn1"><p><sup>1</sup> Suggest searching <code>mosteller wallace federalist papers</code> if you would like to read more about this problem.</p></li></div></blockquote>
+<p>In one of the earliest examples of statistical text analysis, F. Mosteller and D. L. Wallace used a form of Naive Bayes classification to identify the authorships of the 15 disputed papers, finding strong evidence that Madison was the author of all of the disputed papers.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="no-row-height column-margin column-container"><li id="fn2"><p><sup>2</sup> Suggest searching <code>mosteller wallace federalist papers</code> if you would like to read more about this problem.</p></li></div></blockquote>
 </section>
 <section id="general-instructions" class="level4">
 <h4 class="anchored" data-anchor-id="general-instructions">General instructions</h4>
