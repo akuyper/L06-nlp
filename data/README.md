@@ -14,7 +14,6 @@ In one of the earliest examples of statistical text analysis, F. Mosteller
 and D. L. Wallace used a form of Naive Bayes classification to identify
 the authorships of the 15 disputed papers, finding strong evidence that
 Madison was the author of all of the disputed papers.
-}
 
 #### Source
 [http://www.gutenberg.org/ebooks/18](http://www.gutenberg.org/ebooks/18)

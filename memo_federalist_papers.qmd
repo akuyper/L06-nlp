@@ -7,13 +7,14 @@ date: today
 
 format:
   html:
+    theme: cosmo
     toc: true
     toc-depth: 4
     toc-location: left
     embed-resources: true
     code-fold: false
     link-external-newwindow: true
-
+    
 execute:
   warning: false
   
